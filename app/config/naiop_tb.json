@@ -1,0 +1,19 @@
+{
+    "scraper_interval": 1,
+    "url": "https://www.naioptb.org/calendarofevents",
+    "base_url": "https://www.naioptb.org",
+    "organizer": "NAIOP TB",
+    "industry": "CRE",
+    "market": "TPA",
+    "event_list_selector": "h4.boxHeaderTitle",
+    "event_title_selector": "a.eventDetailsLink",
+    "event_link_selector": "a.eventDetailsLink",
+    "detail_selectors": {
+        "DateTime": {
+            "start_dt_selector": "script:event.start",
+            "end_dt_selector": "script:event.end",
+            "dt_example": "2025-05-16T17:00:00Z",
+            "date_format": "iso8601"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "scraper_interval": 1,
+    "url": "https://irem-centralfl.org",
+    "base_url": "https://irem-centralfl.org",
+    "organizer": "IREM ORL",
+    "industry": "PROP MGMT",
+    "market": "ORL",
+    "event_list_selector": "div.compacttextmd",
+    "event_link_selector": "h3 a",
+    "event_title_selector": "h3 a",
+    "detail_selectors": {
+        "DateTime": {
+            "datetime_selector": {
+                "selector": "div.col-md-11.col-xs-11.pr-0 p",
+                "position": 0
+            },
+            "datetime_example": "April 16, 2025 9:00 AM - 12:00 PM",
+            "datetime_format": "month_day_year_timerange"
+        }
+    }
+}

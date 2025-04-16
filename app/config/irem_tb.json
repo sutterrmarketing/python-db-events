@@ -1,0 +1,22 @@
+{
+    "scraper_interval": 1,
+    "url": "https://iremflwc.org",
+    "base_url": "https://iremflwc.org",
+    "organizer": "IREM TB",
+    "industry": "PROP MGMT",
+    "market": "TPA",
+    "event_list_selector": "div.compacttextmd",
+    "event_link_selector": "h3 a",
+    "event_title_selector": "h3 a",
+    "title_filter": ["webinar", "zoom", "virtual", "online"],
+    "detail_selectors": {
+        "DateTime": {
+            "datetime_selector": {
+                "selector": "div.col-md-11.col-xs-11.pr-0 p",
+                "position": 0
+            },
+            "datetime_example": "April 16, 2025 9:00 AM - 12:00 PM",
+            "datetime_format": "month_day_year_timerange"
+        }
+    }
+}

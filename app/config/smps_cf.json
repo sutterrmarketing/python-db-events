@@ -1,0 +1,9 @@
+{
+    "scraper_interval": 10,
+    "url": "https://smpscentralflorida.org/meetinginfo.php",
+    "base_url": "https://smpscentralflorida.org",
+    "organizer": "SMPS CF",
+    "industry": "AEC",
+    "market": "ORL",
+    "event_list_selector": "div.meeting-list-large"
+}

@@ -1,0 +1,22 @@
+{
+    "scraper_interval": 1,
+    "url": "https://ifmasuncoast.org/Events?EventViewMode=1&EventListViewMode=1",
+    "base_url": "https://ifmasuncoast.org",
+    "ssl_verify": false,
+    "organizer": "IFMA Suncoast",
+    "industry": "Facility",
+    "market": "TPA",
+    "event_list_selector": "h4.boxHeaderTitle",
+    "event_link_selector": "a.eventDetailsLink",
+    "event_title_selector": "a.eventDetailsLink",
+    "detail_selectors": {
+        "DateTime": {
+            "date_selector": "script:event.start",
+            "time_selector": "script:event.end",
+            "date_example": "2025-05-16T17:00:00Z",
+            "date_format": "iso8601",
+            "time_example": "2025-05-16T17:00:00Z",
+            "time_format": "iso8601"
+        }
+    }
+}

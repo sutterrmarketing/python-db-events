@@ -1,0 +1,28 @@
+{
+    "scraper_interval": 15,
+    "url": "https://bomagtb.org/meetinginfo.php",
+    "base_url": "https://bomagtb.org",
+    "organizer": "BOMA TB",
+    "industry": "PROP MGMT",
+    "market": "TPA",
+    "event_list_selector": "div.meeting-list-large",
+    "event_title_selector": "h2",
+    "event_link_selector": "a[href*='meetinginfo.php']",
+    "title_filter": ["committee"],
+    "detail_selectors": {
+        "DateTime": {
+            "date_selector": {
+                "selector": "div.col-sm-11.col-xs-11.pr-0 p",
+                "position": 0
+            },
+            "time_selector": {
+                "selector": "div.col-sm-11.col-xs-11.pr-0 p",
+                "position": 0
+            },
+            "date_example": "March 13, 2025",
+            "date_format": "month_day_year",
+            "time_example": "9:30 AM - 10:30 AM",
+            "time_format": "range"
+        }
+    }
+}

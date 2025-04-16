@@ -1,0 +1,23 @@
+{
+    "scraper_interval": 1,
+    "url": "https://www.caicf.org/events",
+    "base_url": "https://www.caicf.org",
+    "organizer": "CAICF",
+    "industry": "Condo/Multi",
+    "market": "ORL",
+    "event_list_selector": "div.col-7.col-lg-9.px-2",
+    "event_link_selector": "div.col-7.col-lg-9.px-2 h4 a",
+    "event_title_selector": "div.col-7.col-lg-9.px-2 h4 a",
+    "detail_selectors": {
+        "DateTime": {
+            "date_selector": "jsonld:startDate",
+            "time_selector": "jsonld:endDate",
+            "date_example": "2025-03-27T09:00:00-04:00",
+            "date_format": "iso8601",
+            "time_example": "2025-03-11T11:30:00-04:00",
+            "time_format": "iso8601"
+        },
+        "Event Category": "dd.tribe-events-event-categories a",
+        "Event Category Filter": ["caicf-university", "cam-only-event", "city-or-county-events", "volunteer", "webinar"]
+    }
+}

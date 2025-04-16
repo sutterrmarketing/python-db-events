@@ -1,0 +1,9 @@
+{
+    "url": "https://centralflorida.uli.org/wp-json/uli/v1/events",
+    "base_url": "https://centralflorida.uli.org",
+    "organizer": "ULI CF",
+    "industry": "CRE",
+    "market": "ORL",
+    "program_filter": ["uli learning"],
+    "type_filter": ["webinar"]
+}

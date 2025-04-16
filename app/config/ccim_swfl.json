@@ -1,0 +1,9 @@
+{
+    "scraper_interval": 10,
+    "url": "https://www.flccim.com",
+    "base_url": "https://www.flccim.com",
+    "organizer": "CCIM SWFL",
+    "industry": "CRE",
+    "market": "SWFL",
+    "calendar": "southwest-district"
+}

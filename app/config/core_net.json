@@ -1,0 +1,11 @@
+{
+    "scraper_interval": 1,
+    "url": "https://tampa.corenetglobal.org/events/recentcommunityeventsdashboard",
+    "base_url": "https://tampa.corenetglobal.org",
+    "organizer": "CoreNet",
+    "industry": "CRE",
+    "market": "TPA",
+    "event_list_selector": "div.row.title-row",
+    "event_title_selector": "a[title]",
+    "event_time_selector": "div.timeAgoFormat"
+}

@@ -1,0 +1,22 @@
+{
+    "scraper_interval": 1,
+    "url": "https://members.cfhla.org/cfhla-event-calendar",
+    "base_url": "https://members.cfhla.org",
+    "organizer": "CFHLA",
+    "industry": "Hospitality",
+    "market": "ORL",
+    "event_list_selector": "div.card-body.gz-events-card-body",
+    "event_link_selector": "h5.card-title a.gz-card-title.gz-event-card-title",
+    "event_title_selector": "h5.card-title a.gz-card-title.gz-event-card-title",
+    "title_filter": ["leads group", "meeting", "seminar"],
+    "detail_selectors": {
+        "DateTime": {
+            "date_selector": "div.card-text.gz-event-time span",
+            "time_selector": "div.card-text.gz-event-time span",
+            "date_example": "Tuesday, March 11, 2025 (8:00 AM - 9:00 AM) (EDT)",
+            "date_format": "weekday_month_day_year_time_tz",
+            "time_example": "Tuesday, March 11, 2025 (8:00 AM - 9:00 AM) (EDT)",
+            "time_format": "weekday_month_day_year_time_tz"
+        }
+    }
+}

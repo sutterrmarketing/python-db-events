@@ -1,0 +1,10 @@
+{
+    "scraper_interval": 30,
+    "url": "https://orlando.crewnetwork.org/api/events",
+    "base_url": "https://orlando.crewnetwork.org",
+    "url2": "https://orlando.crewnetwork.org/events/view-all-events",
+    "organizer": "CREW ORL",
+    "industry": "CRE",
+    "market": "ORL",
+    "event_type_selector": ["CREW Orlando"]
+}

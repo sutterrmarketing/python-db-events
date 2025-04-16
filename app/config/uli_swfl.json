@@ -1,0 +1,9 @@
+{
+    "url": "https://swflorida.uli.org/wp-json/uli/v1/events",
+    "base_url": "https://swflorida.uli.org",
+    "organizer": "ULI SWFL",
+    "industry": "CRE",
+    "market": "SWFL",
+    "program_filter": ["uli learning"],
+    "type_filter": ["webinar"]
+}

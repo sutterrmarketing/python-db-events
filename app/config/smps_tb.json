@@ -1,0 +1,10 @@
+{
+    "scraper_interval": 10,
+    "url": "https://smpstampabay.com/meetinginfo.php",
+    "base_url": "https://smpstampabay.com",
+    "organizer": "SMPS TAMPA BAY",
+    "industry": "AEC",
+    "market": "TPA",
+    "event_list_selector": "div.meeting-list-large",
+    "title_filter": ["board meeting"]
+}

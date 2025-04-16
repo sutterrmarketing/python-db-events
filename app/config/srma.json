@@ -1,0 +1,19 @@
+{
+    "scraper_interval": 1,
+    "url": "https://www.srma.net/srma/events/calendar",
+    "base_url": "https://www.srma.net",
+    "organizer": "SRMA",
+    "industry": "Manufacturing",
+    "market": "SWFL",
+    "event_list_selector": "div[id^='MainCopy_ctl06_CalendarEventsList_EventTitlePanel_']",
+    "event_link_selector": "h3 a",
+    "event_title_selector": "h3 a",
+    "detail_selectors": {
+        "DateTime": {
+            "selector": "div.row.event-dates div.col-md-12",
+            "position": 0,
+            "date_example": "Mar 27, 2025 from 01:30 PM to 05:00 PM (ET)",
+            "date_format": "abbr_month_day_year_timerange"
+        }
+    }
+}

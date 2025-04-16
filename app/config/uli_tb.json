@@ -1,0 +1,9 @@
+{
+    "url": "https://tampabay.uli.org/wp-json/uli/v1/events",
+    "base_url": "https://tampabay.uli.org",
+    "organizer": "ULI TB",
+    "industry": "CRE",
+    "market": "TPA",
+    "program_filter": ["uli learning"],
+    "type_filter": ["webinar"]
+}

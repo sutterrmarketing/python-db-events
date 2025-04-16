@@ -1,0 +1,22 @@
+{
+    "scraper_interval": 1,
+    "url": "https://abccentralflorida.com/event_listing_category/legislative",
+    "base_url": "https://abccentralflorida.com",
+    "organizer": "ABC Central FL",
+    "industry": "Construction",
+    "market": "ORL",
+    "event_list_selector": "div.wpem-event-layout-wrapper",
+    "event_link_selector": "a.wpem-event-action-url",
+    "event_title_selector": "h3.wpem-heading-text",
+    "detail_selectors": {
+        "DateTime": {
+            "start_date_selector": "div.wpem-event-date-time span.wpem-event-date-time-text:nth-of-type(1)",
+            "end_date_selector": "div.wpem-event-date-time span.wpem-event-date-time-text:nth-of-type(2)",
+            "time_selector": null,
+            "date_example": "04-23-2025 @ 07:30 AM",
+            "date_format": "MM-DD-YYYY @ hh:mm AM/PM",
+            "time_example": null,
+            "time_format": null
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "scraper_interval": 1,
+    "url": "https://reis-swfl.org/events",
+    "base_url": "https://reis-swfl.org",
+    "organizer": "REIS",
+    "industry": "CRE",
+    "market": "SWFL",
+    "event_data_selector": "script[type='application/ld+json']",
+    "detail_selectors": {
+        "DateTime": {
+            "dt_format": "iso8601"
+        }
+    }
+}

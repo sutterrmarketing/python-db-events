@@ -1,0 +1,24 @@
+{
+    "scraper_interval": 1,
+    "url": "https://www.bomaorlando.org/events/networking",
+    "base_url": "https://www.bomaorlando.org",
+    "organizer": "BOMA ORL",
+    "industry": "PROP MGMT",
+    "market": "ORL",
+    "event_list_selector": "div.title.c-event-date-stub__event-wrapper",
+    "event_link_selector": "div.title.c-event-date-stub__event-wrapper a:first-of-type",
+    "event_title_selector": "div.title.c-event-date-stub__event-wrapper a:first-of-type strong.c-event-date-stub__event-name",
+    "detail_selectors": {
+        "Description": "p.o-details-block__sub-title",
+        "Location Name": "p.o-details-block__details-copy",
+        "Address": "a.o-details-block__details-copy-link",
+        "DateTime": {
+            "date_selector": "span.start strong",
+            "time_selector": "span.o-details-block__details-copy",
+            "date_example": "Monday, March 24, 2025",
+            "date_format": "weekday_month_day_year",
+            "time_example": "4:00 PM - 5:00 PM (EDT)",
+            "time_format": "range_with_tz"
+        }
+    }
+}

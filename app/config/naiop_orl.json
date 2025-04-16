@@ -1,0 +1,21 @@
+{
+    "scraper_interval": 1,
+    "url": "https://www.naiopcfl.org/aws/NAIOPCF/pt/sp/events",
+    "base_url": "https://www.naiopcfl.org",
+    "organizer": "NAIOP ORL",
+    "industry": "CRE",
+    "market": "ORL",
+    "event_list_selector": "div.tcscalendars-home",
+    "event_title_selector": "h3 a",
+    "event_link_selector": "h3 a",
+    "detail_selectors": {
+        "DateTime": {
+        "date_selector": "span.tcs-calendar-date-range",
+        "time_selector": "span.time_format",
+        "date_example": "April 16, 2025",
+        "date_format": "month_day_year",
+        "time_example": "5:30PM - 8:00PM",
+        "time_format": "range"
+        }
+    }
+}

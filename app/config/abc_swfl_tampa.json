@@ -1,0 +1,14 @@
+{
+    "scraper_interval": 1,
+    "url": "https://web.abcflgulf.org/External/WCControls/V12/WebDeps/Calendar/xml/newCalendarXML.aspx",
+    "base_url": "https://web.abcflgulf.org",
+    "organizer": "ABC SWFL",
+    "industry": "Construction",
+    "market": "SWFL",
+    "event_title_selector": "Event_Title",
+    "event_link_selector": "Event_Url",
+    "event_start_date_selector": "Start_Date",
+    "event_end_date_selector": "End_Date",
+    "event_start_time_selector": "Start_Time",
+    "event_end_time_selector": "End_Time"
+}

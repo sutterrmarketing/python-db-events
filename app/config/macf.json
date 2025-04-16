@@ -1,0 +1,19 @@
+{
+    "scraper_interval": 1,
+    "url": "https://www.madeincentralflorida.com/news-events/upcoming-events",
+    "base_url": "https://www.madeincentralflorida.com",
+    "organizer": "MACF",
+    "industry": "Manufacturing",
+    "market": "ORL",
+    "event_list_selector": "div.col-sm-9.col-md-9.no-pad",
+    "event_title_selector": "h3 a",
+    "event_link_selector": "h3 a",
+    "detail_selectors": {
+        "DateTime": {
+            "date_selector": ".event-dates > .col-md-12, #event-when",
+            "date_example": "From April 9, 2025, 5:30 pm to April 9, 2025, 7:30",
+            "date_format": "range_text",
+            "time_format": "range_text"
+        }
+    }
+}

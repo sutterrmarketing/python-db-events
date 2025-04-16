@@ -1,0 +1,24 @@
+{
+    "scraper_interval": 1,
+    "url": "https://www.bama-fl.org/Upcoming-Events",
+    "base_url": "https://www.bama-fl.org",
+    "organizer": "BAMA",
+    "industry": "Manufacturing",
+    "market": "TPA",
+    "event_list_selector": "li",
+    "event_link_selector": "div.title a",
+    "event_title_selector": "div.title a",
+    "detail_selectors": {
+        "Description": "script:event.,description",
+        "Address": "script:event.,location",
+        "Address_filter": ["online", "virtual", "zoom", "webinar", "url"],
+        "DateTime": {
+        "date_selector": "script:event.,start",
+        "time_selector": "script:event.,end",
+        "date_example": "2025-03-27T15:00:00Z",
+        "date_format": "iso8601",
+        "time_example": "2025-03-27T18:00:00Z",
+        "time_format": "iso8601"
+        }
+    }
+}

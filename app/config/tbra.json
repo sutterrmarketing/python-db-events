@@ -1,0 +1,9 @@
+{
+    "scraper_interval": 1,
+    "url": "https://thetbra.com/events/#!calendar",
+    "base_url": "https://thetbra.com",
+    "organizer": "TBRA",
+    "industry": "CRE",
+    "market": "TPA",
+    "calendar_filter": [1]
+}

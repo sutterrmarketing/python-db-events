@@ -1,0 +1,13 @@
+{
+  "scraper_interval": 1,
+  "url": "https://members.fgcar.org/events",
+  "base_url": "https://members.fgcar.org",
+  "organizer": "FGCAR",
+  "industry": "CRE",
+  "market": "TPA",
+  "event_list_selector": "div.card-body.gz-events-card-body",
+  "event_title_selector": "a.gz-event-card-title",
+  "start_meta_selector": "meta[itemprop='startDate']",
+  "end_meta_selector": "meta[itemprop='endDate']",
+  "title_filter": ["board meeting"]
+}

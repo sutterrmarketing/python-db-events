@@ -1,0 +1,13 @@
+{
+    "scraper_interval": 1,
+    "url": "https://www.coaa.org/events/coaa-fl",
+    "base_url": "https://www.coaa.org",
+    "organizer": "COAA",
+    "industry": "Construction",
+    "market": "FLORIDA",
+    "event_list_selector": "div.event[role='listitem']",
+    "event_title_selector": "strong.c-event-date-stub__event-name",
+    "event_link_selector": "div.c-event-date-stub__event-wrapper a",
+    "event_time_selector": "span.c-event-date-stub__time",
+    "date_attr_selector": "div.date-stub"
+}

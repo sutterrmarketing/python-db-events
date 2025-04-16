@@ -1,0 +1,10 @@
+{
+    "scraper_interval": 1,
+    "url": "https://mms.ifmaorlando.org/members/calendar5.php?org_id=IFMA",
+    "base_url": "https://mms.ifmaorlando.org",
+    "organizer": "IFMA ORL",
+    "industry": "FAC MGMT",
+    "market": "ORL",
+    "event_list_selector": "tr",
+    "event_title_selector": "td.data_row div b a"
+}

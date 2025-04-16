@@ -1,0 +1,24 @@
+{
+    "scraper_interval": 1,
+    "url": "https://www.reictampabay.org/index.php?option=com_jevents&Itemid=124&task=",
+    "base_url": "https://www.reictampabay.org",
+    "organizer": "REIC",
+    "industry": "CRE",
+    "market": "TPA",
+    "event_list_selector": "table.mod_events_latest_table tr",
+    "event_title_selector": "span.mod_events_latest_content a",
+    "event_link_selector": "span.mod_events_latest_content a",
+    "detail_selectors": {
+        "DateTime": {
+            "date_selector": "span.event-start-date",
+            "time_selector": [
+                {"selector": "span.event-start-time"},
+                {"selector": "span.event-stop-time"}
+            ],
+            "date_example": "Thursday, March 27, 2025",
+            "date_format": "weekday_month_day_year",
+            "time_example": "5:30 PM - 8:00 PM EDT",
+            "time_format": "full_datetime"
+        }
+    }
+}

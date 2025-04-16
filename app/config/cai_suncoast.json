@@ -1,0 +1,19 @@
+{
+    "scraper_interval": 1,
+    "url": "https://suncoastcai.com/events-list",
+    "base_url": "https://suncoastcai.com",
+    "organizer": "CAI Suncoast",
+    "industry": "Condo/Multi",
+    "market": "TPA",
+    "event_list_selector": "div.amo_events-event.amo_wrapper-item",
+    "event_link_selector": "a#event-register-link",
+    "event_title_selector": "h4.amo-subtitle",
+    "detail_selectors": {
+        "DateTime": {
+            "date_selector": "div.amo_events-event",
+            "date_example": "From April 9, 2025, 5:30 pm to April 9, 2025, 7:30",
+            "date_format": "range_text",
+            "time_format": "range_text"
+        }
+    }
+}

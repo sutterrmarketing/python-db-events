@@ -1,0 +1,22 @@
+{
+    "scraper_interval": 1,
+    "url": "https://www.swfaa.org/events/affiliate-event",
+    "base_url": "https://www.swfaa.org",
+    "organizer": "SWFAA",
+    "industry": "Condo/Multi",
+    "market": "SWFL",
+    "event_list_selector": "div.event[role='listitem']",
+    "event_title_selector": "a[data-aria-label] strong",
+    "event_link_selector": "a[data-aria-label]",
+    "detail_selectors": {
+        "DateTime": {
+        "start_selector": "div.date-stub.c-event-date-stub__start",
+        "end_selector": "div.date-stub.c-event-date-stub__end-date",
+        "start_attribute": "title",
+        "end_attribute": "title",
+        "dt_example": "Starts April 4, 2025 at 9:00 AM",
+        "dt_format": "Starts %B %d, %Y at %I:%M %p",
+        "optional": true
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "scraper_interval": 1,
+    "url": "https://www.caiswfl.com/index.php?option=com_jevents&task=month.calendar&catids=22&Itemid=115",
+    "base_url": "https://www.caiswfl.com",
+    "organizer": "CAI SWFL",
+    "industry": "Condo/Multi",
+    "market": "SWFL",
+    "event_list_selector": "div.cal-event-container",
+    "event_link_selector": "a.cal_titlelink",
+    "event_title_selector": "a.cal_titlelink",
+    "detail_selectors": {
+        "DateTime": {
+            "date_selector": "span.event-start-date",
+            "time_selector": [
+                {"selector": "span.event-start-time"},
+                {"selector": "span.event-stop-time"}
+            ],
+            "date_example": "Thursday, April 17, 2025",
+            "date_format": "weekday_month_day_year",
+            "time_example": "8:30 AM",
+            "time_format": "full_datetime"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "scraper_interval": 1,
+    "url": "https://www.cfcar.net/Calendar",
+    "base_url": "https://www.cfcar.net",
+    "organizer": "CFCAR",
+    "industry": "CRE",
+    "market": "ORL",
+    "event_list_selector": "h4.boxHeaderTitle",
+    "event_link_selector": "h4.boxHeaderTitle a",
+    "event_title_selector": "h4.boxHeaderTitle a",
+    "detail_selectors": {
+        "Description": ["jsonld:description", "script:event.description"],
+        "Location Name": ["jsonld:location.name", "script:event.location"],
+        "Address": ["jsonld:location.address", "script:event.location"],
+        "DateTime": {
+            "date_selector": ["jsonld:startDate", "script:event.start"],
+            "time_selector": ["jsonld:endDate", "script:event.end"],
+            "date_example": "2025-03-14T12:30:00Z",
+            "date_format": "iso8601",
+            "time_example": "2025-03-14T14:00:00Z",
+            "time_format": "iso8601"
+        }
+    }
+}

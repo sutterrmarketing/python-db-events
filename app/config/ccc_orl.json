@@ -1,0 +1,21 @@
+{
+    "scraper_interval": 10,
+    "url": "https://cccorlando.net/events",
+    "base_url": "https://cccorlando.net",
+    "organizer": "CCC Orlando",
+    "industry": "CRE",
+    "market": "ORL",
+    "event_list_selector": "div.fusion-column-wrapper",
+    "event_link_selector": "a.fusion-button",
+    "event_title_selector": "div.fusion-title h4",
+    "detail_selectors": {
+        "DateTime": {
+            "date_selector": "div.em-item-meta-line.em-event-date.em-event-meta-datetime",
+            "time_selector": "div.em-item-meta-line.em-event-time.em-event-meta-datetime",
+            "date_example": "February 19, 2025",
+            "date_format": "month_day_year",
+            "time_example": "4:30 pm - 8:30 pm",
+            "time_format": "range"
+        }
+    }
+}

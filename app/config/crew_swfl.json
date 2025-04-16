@@ -1,0 +1,9 @@
+{
+  "scraper_interval": 1,
+  "url": "https://crewswfl.com/events/category/all-events/",
+  "base_url": "https://crewswfl.com",
+  "organizer": "CREW SWFL",
+  "industry": "CRE",
+  "market": "SWFL",
+  "title_filter": ["bod meeting", "virtual", "national network"]
+}

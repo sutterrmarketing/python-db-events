@@ -1,0 +1,9 @@
+{
+    "scraper_interval": 10,
+    "url": "https://www.flccim.com",
+    "base_url": "https://www.flccim.com",
+    "organizer": "CCIM WEST COAST",
+    "industry": "CRE",
+    "market": "TPA",
+    "calendar": "west-coast-district"
+}

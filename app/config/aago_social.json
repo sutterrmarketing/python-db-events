@@ -1,0 +1,25 @@
+{
+    "scraper_interval": 1,
+    "url": "https://www.aago.org/events/social",
+    "base_url": "https://www.aago.org",
+    "organizer": "AAGO",
+    "industry": "Condo/Multi",
+    "market": "ORL",
+    "event_list_selector": "div.title.c-event-date-stub__event-wrapper",
+    "event_link_selector": "a",
+    "event_title_selector": "strong.c-event-date-stub__event-name",
+    "detail_selectors": {
+        "Description": "h2.c-event-details__sub-title",
+        "Location Name": null,
+        "Address": "div.c-event-details__address",
+        "DateTime": {
+            "start_date_selector": "div.c-event-details__start-date",
+            "end_date_selector": "div.c-event-details__end-date",
+            "time_selector": "div.c-event-details__time-wrapper div.c-event-details__time",
+            "date_example": "Tuesday, March 11, 2025",
+            "date_format": "weekday_month_day_year",
+            "time_example": "9:00 AM - 12:00 PM (EDT)",
+            "time_format": "range_with_tz"
+        }
+    }
+}

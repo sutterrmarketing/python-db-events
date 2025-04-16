@@ -1,0 +1,11 @@
+{
+    "scraper_interval": 30,
+    "url": "https://orlando.crewnetwork.org/api/events",
+    "base_url": "https://tampa-bay.crewnetwork.org",
+    "url2": "https://orlando.crewnetwork.org/events/view-all-events",
+    "organizer": "CREW TB",
+    "industry": "CRE",
+    "market": "TPA",
+    "event_type_selector": ["CREW Tampa Bay"],
+    "title_filter": ["crew discovery", "book club"]
+}
