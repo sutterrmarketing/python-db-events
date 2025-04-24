@@ -11,7 +11,7 @@ FRONTEND_CNAME=front_container
 FRONTEND_INAME=front_image
 FRONTEND_PORT=3000
 
-EXTERNAL_PORT=8080
+EXTERNAL_PORT=3000
 
 NETWORK_NAME=web-network
 
@@ -29,7 +29,11 @@ docker build --no-cache -t $BACKEND_INAME -f ./image/DockerFile.backend .
 docker image prune -f
 
 # Build the web image with no cache
-docker build --no-cache -t $FRONTEND_INAME -f ./image/DockerFile.frontend .
+docker build --no-cache \
+  -t $FRONTEND_INAME \
+  -f ./image/DockerFile.frontend \
+  --build-arg NEXT_PUBLIC_API_URL=http://backend_container:8000 .
+
 # Prune dangling images
 docker image prune -f
 

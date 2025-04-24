@@ -4,6 +4,10 @@ FROM node:20-alpine
 # Set working directory
 WORKDIR /app
 
+# Accept build arg for API base
+ARG NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+
 # Copy and install dependencies
 COPY frontend/package.json frontend/package-lock.json ./
 RUN npm ci

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, Dispatch, SetStateAction } from 'react';
+import { useState, useEffect, Dispatch, SetStateAction, useCallback, useRef } from 'react';
 import { Box, Table, Spinner, Text } from '@chakra-ui/react';
 import { Event } from '@/types/event';
 import { forwardRef, useImperativeHandle } from 'react';
@@ -164,6 +164,22 @@ const EventEditTable = forwardRef<EventTableRef, EventTableProps>(({
   const rowHoverColor = useColorModeValue('gray.100', 'gray.700');
   const selectedRowColor = useColorModeValue('blue.100', 'blue.700');
 
+  // We'll create a stable reference to the onSelectEvent function
+  const onSelectEventRef = useRef(onSelectEvent);
+  
+  // Update the ref when onSelectEvent changes
+  useEffect(() => {
+    onSelectEventRef.current = onSelectEvent;
+  }, [onSelectEvent]);
+
+  // Define handleSelectEvent with the ref instead of the direct prop
+  const handleSelectEvent = useCallback((event: Event | null) => {
+    // Only call onSelectEvent if the selected event has actually changed
+    if (event?.id !== propSelectedEventId || (event === null && propSelectedEventId !== null)) {
+      onSelectEventRef.current(event);
+    }
+  }, [propSelectedEventId]); // Now depends on propSelectedEventId to check for changes
+
   // Expose method to parent
   useImperativeHandle(ref, () => ({
     setSearchTerm: (term: string) => {
@@ -228,15 +244,19 @@ const EventEditTable = forwardRef<EventTableRef, EventTableProps>(({
           );
           setLatestCreatedAt(new Date(latestEvent.created_at));
 
-          const currentSelectedEvent = data.find(event => event.id === propSelectedEventId);
+          const currentSelectedEvent = data.find((event: Event) => event.id === propSelectedEventId);
 
-          // If selected event is no longer in data or no selection yet, select first event
-          if (!currentSelectedEvent) {
+          // Only call handleSelectEvent if necessary
+          if (!currentSelectedEvent && data[0]?.id !== propSelectedEventId) {
+            // If no selected event is found in the data and the first event is different from the current selection
             handleSelectEvent(data[0]);
-          } else {
+          } else if (currentSelectedEvent && currentSelectedEvent.id !== propSelectedEventId) {
+            // If a selected event is found but it's different from the current selection
             handleSelectEvent(currentSelectedEvent);
           }
-        } else {
+          // If the current selection is already correct, do nothing
+        } else if (propSelectedEventId !== null) {
+          // Only call handleSelectEvent if we're currently showing an event but there are no events
           handleSelectEvent(null);
         }
       } catch (err) {
@@ -247,13 +267,18 @@ const EventEditTable = forwardRef<EventTableRef, EventTableProps>(({
     };
 
     loadEvents();
-  }, [refreshTrigger, debouncedSearch, sortBy, sortOrder, filter, selectedMarket, selectedIndustry, selectedOrganizer, eventTimeFilter]);
-
-    
-  const handleSelectEvent = (event: Event | null) => {
-    //setSelectedEventId(event ? event.id : null);
-    onSelectEvent(event);
-  };
+  }, [
+    refreshTrigger, 
+    debouncedSearch, 
+    sortBy, 
+    sortOrder, 
+    filter, 
+    selectedMarket, 
+    selectedIndustry, 
+    selectedOrganizer, 
+    eventTimeFilter
+    // handleSelectEvent removed from dependencies
+  ]);
 
   return (
     <Box>
