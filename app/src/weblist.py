@@ -4,7 +4,7 @@ weblist = [
     # "aago_social",
     # "abc_cfl_business",
     # "abc_cfl_legislative",
-    # "abc_swfl_tampa",
+    "abc_swfl_tampa",
     # "bama",
     # "boma_orl_events",
     # "boma_orl_luncheon",

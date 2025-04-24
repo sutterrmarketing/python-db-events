@@ -2,7 +2,7 @@
     "scraper_interval": 1,
     "url": "https://www.caicf.org/events",
     "base_url": "https://www.caicf.org",
-    "organizer": "CAICF",
+    "organizer": "CAI CF",
     "industry": "Condo/Multi",
     "market": "ORL",
     "event_list_selector": "div.col-7.col-lg-9.px-2",

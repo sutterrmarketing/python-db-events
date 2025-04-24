@@ -3,7 +3,7 @@
     "url": "https://ifmasuncoast.org/Events?EventViewMode=1&EventListViewMode=1",
     "base_url": "https://ifmasuncoast.org",
     "ssl_verify": false,
-    "organizer": "IFMA Suncoast",
+    "organizer": "IFMA TB",
     "industry": "Facility",
     "market": "TPA",
     "event_list_selector": "h4.boxHeaderTitle",

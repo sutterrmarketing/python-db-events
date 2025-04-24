@@ -1,8 +1,6 @@
 import importlib
 import urllib3
 import asyncio
-# from src.db.crud import insert_event_async
-# from src.db.database import init_db
 from app.src.utils import deduplicate_events, load_config
 from app.src.weblist import weblist
 

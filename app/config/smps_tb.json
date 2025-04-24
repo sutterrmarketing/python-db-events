@@ -2,7 +2,7 @@
     "scraper_interval": 10,
     "url": "https://smpstampabay.com/meetinginfo.php",
     "base_url": "https://smpstampabay.com",
-    "organizer": "SMPS TAMPA BAY",
+    "organizer": "SMPS TB",
     "industry": "AEC",
     "market": "TPA",
     "event_list_selector": "div.meeting-list-large",

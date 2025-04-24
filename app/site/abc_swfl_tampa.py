@@ -35,7 +35,7 @@ def build_calendar_url(base_url, start: datetime, end: datetime) -> str:
 def get_event_list(config):
     """Fetch the list of events from the API calendar feed."""
     start_date = datetime.today()
-    end_date = start_date + timedelta(days=30)
+    end_date = start_date + timedelta(days=180)
 
     api_url = build_calendar_url(config["url"], start_date, end_date)
     print(f"Fetching events from {api_url}")
