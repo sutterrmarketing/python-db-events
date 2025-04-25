@@ -67,7 +67,7 @@ const NewEventCard: React.FC<NewEventCardProps> = ({ onEventAdd }) => {
         ) {
             setIsLoading(true);
             try {
-                const response = await fetch('/api/events', {
+                const response = await fetch('/api/events/new', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -134,7 +134,7 @@ const NewEventCard: React.FC<NewEventCardProps> = ({ onEventAdd }) => {
 
             <Field.Root>
               <Field.Label>Link</Field.Label>
-              <Input name="link" value={formData.event_link} onChange={handleInputChange} />
+              <Input name="event_link" value={formData.event_link} onChange={handleInputChange} />
             </Field.Root>
 
             <Field.Root>

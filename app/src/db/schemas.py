@@ -35,6 +35,20 @@ class EventResponse(BaseModel):
     model_config = {"from_attributes": True}
 
 
+class EventCreate(BaseModel):
+    title: str
+    organizer: str
+    event_link: str
+    market: Optional[str] = None
+    industry: Optional[str] = None
+    attending: Optional[str] = None
+    color: Optional[str] = None
+    note: Optional[str] = None
+    start_datetime: Optional[datetime] = None
+    end_datetime: Optional[datetime] = None
+    valid: Optional[bool] = True
+
+
 class EventUpdate(BaseModel):
     title: Optional[str]
     event_link: Optional[str]

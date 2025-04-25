@@ -1,7 +1,9 @@
 import { NextRequest } from 'next/server';
 
+const apiURL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+
 export async function GET(req: NextRequest) {
-  const apiURL = process.env.NEXT_PUBLIC_API_URL;
+
   const paramMap = {
     search: "search",
     market: "market",
@@ -45,7 +47,6 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  const apiURL = process.env.NEXT_PUBLIC_API_URL;
   const body = await req.json();
 
   try {
@@ -75,7 +76,6 @@ export async function POST(req: NextRequest) {
 
 // Update an event's information in the API
 export async function PUT(request: NextRequest) {
-  const apiURL = process.env.NEXT_PUBLIC_API_URL;
 
   try {
     const body = await request.json();
@@ -104,29 +104,6 @@ export async function PUT(request: NextRequest) {
     return Response.json(data);
   } catch (error) {
     console.error('Next.js PUT error:', error);
-    return new Response('Server error', { status: 500 });
-  }
-}
-
-export async function DELETE(req: NextRequest) {
-  const apiURL = process.env.NEXT_PUBLIC_API_URL;
-  const body = await req.json();
-
-  try {
-    const res = await fetch(`${apiURL}/events/${body.id}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (!res.ok) {
-      return new Response('Failed to delete selected event', { status: res.status });
-    }
-
-    return new Response('Event deleted successfully', { status: 200 });
-  } catch (error) {
-    console.error('API error:', error);
     return new Response('Server error', { status: 500 });
   }
 }

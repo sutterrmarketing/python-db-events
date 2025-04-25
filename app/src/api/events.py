@@ -6,7 +6,7 @@ from datetime import datetime
 import importlib
 from app.src.utils import deduplicate_events, load_config
 from app.src.db.database import SessionLocal
-from app.src.db.schemas import EventResponse, EventUpdate
+from app.src.db.schemas import EventResponse, EventUpdate, EventCreate
 from app.src.db.database import init_db
 from app.src.db.models import Event
 
@@ -193,6 +193,34 @@ def delete_event(id: int):
         db.delete(event)
         db.commit()
         return event
+    finally:
+        db.close()
+
+
+@app.post("/events/new", response_model=EventResponse)
+def create_event(event: EventCreate):
+    db = SessionLocal()
+    try:
+        new_event = Event(
+            title=event.title,
+            organizer=event.organizer,
+            event_link=event.event_link,
+            market=event.market,
+            industry=event.industry,
+            attending=event.attending,
+            color=event.color,
+            note=event.note,
+            start_datetime=event.start_datetime,
+            end_datetime=event.end_datetime,
+            created_at=datetime.now(),
+            updated_at=datetime.now(),
+            valid=event.valid if event.valid is not None else True,
+        )
+
+        db.add(new_event)
+        db.commit()
+        db.refresh(new_event)
+        return new_event
     finally:
         db.close()
 

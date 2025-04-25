@@ -20,6 +20,7 @@ interface EventTableProps {
   selectedIndustry?: string;
   selectedOrganizer?: string;
   eventTimeFilter?: 'all-events' | 'past-events' | 'upcoming-events';
+  validityFilter?: 'all' | 'valid' | 'invalid';
 }
 
 export interface EventTableRef {
@@ -88,20 +89,22 @@ const TableBody = ({
 
     if (event.id === selectedEventId) return addTransparency(selectedRowColor, alpha);
     
-    const eventEndDate = new Date(event.end_datetime);
-    if (eventEndDate < now) return addTransparency('#777777', alpha); // Gray for past events
-
     if (event.color) return addTransparency(event.color, alpha); // Use the event's original color if it exists
-
-    if (latestCreatedAt) {
-      const eventCreatedAt = new Date(event.created_at);
-      const thirtyMinutesAgo = new Date(latestCreatedAt.getTime() - 30 * 60000);
-      if (eventCreatedAt >= thirtyMinutesAgo && eventCreatedAt <= latestCreatedAt) {
-        return addTransparency('#FFA500', alpha); // Orange Yellow for recently created events without a specific color
-      }
-    }
-
+    
     return 'transparent'; // Default to transparent if no color is set
+  };
+
+  const isPastEvent = (event: Event): boolean => {
+    const eventEndDate = new Date(event.end_datetime);
+    return eventEndDate < now;
+  };
+
+  const isNewlyAdded = (event: Event): boolean => {
+    if (!latestCreatedAt) return false;
+    
+    const eventCreatedAt = new Date(event.created_at);
+    const thirtyMinutesAgo = new Date(latestCreatedAt.getTime() - 30 * 60000);
+    return eventCreatedAt >= thirtyMinutesAgo && eventCreatedAt <= latestCreatedAt;
   };
 
   return (
@@ -125,7 +128,11 @@ const TableBody = ({
             {new Date(event.end_datetime).toLocaleString()}
           </Table.Cell>
           <Table.Cell width={columnWidths.organizer} textAlign="left">{event.organizer}</Table.Cell>
-          <Table.Cell width={columnWidths.title} textAlign="left">{event.title}</Table.Cell>
+          <Table.Cell width={columnWidths.title} textAlign="left">
+            {event.title}
+            {isPastEvent(event) && <Text as="span" ml={2} fontWeight="bold" color="gray.500">[Passed]</Text>}
+            {isNewlyAdded(event) && <Text as="span" ml={2} fontWeight="bold" color="orange.500">[New]</Text>}
+          </Table.Cell>
           <Table.Cell width={columnWidths.event_link} textAlign="left">
               <a href={encodeURI(event.event_link)} target="_blank" rel="noopener noreferrer">
                 Link
@@ -151,6 +158,7 @@ const EventEditTable = forwardRef<EventTableRef, EventTableProps>(({
   selectedIndustry,
   selectedOrganizer,
   eventTimeFilter,
+  validityFilter,
 }, ref) => {
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
@@ -213,9 +221,13 @@ const EventEditTable = forwardRef<EventTableRef, EventTableProps>(({
           filter: filter,
         });
 
-        if (!params.has('valid')) {
+        // Handle validity filter
+        if (validityFilter === 'valid') {
           params.set('valid', 'true');
+        } else if (validityFilter === 'invalid') {
+          params.set('valid', 'false');
         }
+        // If validityFilter is 'all', don't set the valid parameter
 
         if (selectedMarket && selectedMarket !== 'all') {
           params.set('market', selectedMarket);
@@ -276,7 +288,8 @@ const EventEditTable = forwardRef<EventTableRef, EventTableProps>(({
     selectedMarket, 
     selectedIndustry, 
     selectedOrganizer, 
-    eventTimeFilter
+    eventTimeFilter,
+    validityFilter
     // handleSelectEvent removed from dependencies
   ]);
 

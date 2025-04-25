@@ -28,6 +28,7 @@ export default function DashboardPage() {
   const [selectedIndustry, setSelectedIndustry] = useState('all');
   const [selectedOrganizer, setSelectedOrganizer] = useState('all');
   const [eventTimeFilter, setEventTimeFilter] = useState<EventTimeFilterType>('all-events');
+  const [validityFilter, setValidityFilter] = useState<'all' | 'valid' | 'invalid'>('valid');
 
   const [isRefreshing, setIsRefreshing] = useState<boolean | string>(false);
   const [refreshedSites, setRefreshedSites] = useState<string[]>([]);
@@ -192,6 +193,7 @@ export default function DashboardPage() {
                 >
                   <option value="start_datetime">Start Date/Time</option>
                   <option value="end_datetime">End Date/Time</option>
+                  <option value="created_at">Created Date/Time</option>
                   <option value="organizer">Organizer</option>
                   <option value="title">Title</option>
                   <option value="industry">Industry</option>
@@ -292,6 +294,21 @@ export default function DashboardPage() {
               </NativeSelect.Root>
             </Box>
 
+            <Box>
+              <Text fontSize="sm" mb={1}>Validity</Text>
+              <NativeSelect.Root size="sm" width="auto">
+                <NativeSelect.Field 
+                  value={validityFilter} 
+                  onChange={(e) => setValidityFilter(e.target.value as 'all' | 'valid' | 'invalid')}
+                >
+                  <option value="all">All Events</option>
+                  <option value="valid">Valid Events</option>
+                  <option value="invalid">Invalid Events</option>
+                </NativeSelect.Field>
+                <NativeSelect.Indicator />
+              </NativeSelect.Root>
+            </Box>
+
           </HStack>
 
           <Separator my={2} mx={4} />
@@ -313,6 +330,7 @@ export default function DashboardPage() {
                 selectedIndustry={selectedIndustry}
                 selectedOrganizer={selectedOrganizer}
                 eventTimeFilter={eventTimeFilter}
+                validityFilter={validityFilter}
               />
             </Box>
           </Box>

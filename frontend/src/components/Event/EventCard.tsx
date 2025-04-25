@@ -90,13 +90,13 @@ const EventCard: React.FC<EventCardProps> = ({ event, onEventUpdate, onEventDele
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`/api/events/${formData.id}`, {
+      const response = await fetch(`/api/delete?id=${formData.id}`, {
         method: 'DELETE',
       });
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.detail || 'Failed to delete event');
+        throw new Error(errorData.error || 'Failed to delete event');
       }
 
       toaster.create({ title: "Event deleted", type: "success" });
