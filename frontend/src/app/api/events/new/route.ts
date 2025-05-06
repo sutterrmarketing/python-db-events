@@ -1,6 +1,6 @@
 import { NextRequest } from 'next/server';
 
-const apiURL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+const apiURL = process.env.NEXT_PUBLIC_API_URL || 'http://backend:8000';
 
 export async function POST(req: NextRequest) {
 
