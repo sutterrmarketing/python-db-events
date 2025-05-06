@@ -1,11 +1,9 @@
+# render.yaml (corrected)
+dockerComposeFilePath: ./docker-compose.yml
+
 services:
   - type: web
-    name: industry-events-frontend
+    name: industry-events
     env: docker
     plan: free
-    dockerComposeFilePath: ./docker-compose.yml
-    buildFilter:
-      paths:
-        - image/
-        - frontend/
     autoDeploy: true
