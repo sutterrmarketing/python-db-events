@@ -39,4 +39,4 @@ EXPOSE 8000
 RUN mkdir -p /code/app/data
 
 # Default command to run FastAPI app (adjust as needed)
-CMD ["uvicorn", "app.src.web:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["uvicorn", "app.src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
