@@ -93,7 +93,7 @@ export default function DashboardPage() {
   return (
     <Container maxW="100%" py={8} px={4}>
       <HStack justifyContent="space-between" mb={6}>
-        <Heading size="lg">Events Dashboard</Heading>
+        <Heading size="lg">AEC & CRE Industry Events Dashboard</Heading>
         <Box>
             <HStack justifyContent="space-between" alignItems="flex-start">
                 {/* Refresh Control */}
