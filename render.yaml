@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: industry-events-frontend
+    env: docker
+    plan: free
+    dockerComposeFilePath: ./docker-compose.yml
+    buildFilter:
+      paths:
+        - image/
+        - frontend/
+    autoDeploy: true
