@@ -14,3 +14,5 @@ services:
       dockerfile: ../image/Dockerfile.frontend
     ports:
       - "3000:3000"
+    env_file:
+      - ./frontend/.env.production
