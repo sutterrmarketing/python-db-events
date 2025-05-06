@@ -27,7 +27,7 @@ export default function DashboardPage() {
   const [selectedMarket, setSelectedMarket] = useState('all');
   const [selectedIndustry, setSelectedIndustry] = useState('all');
   const [selectedOrganizer, setSelectedOrganizer] = useState('all');
-  const [eventTimeFilter, setEventTimeFilter] = useState<EventTimeFilterType>('all-events');
+  const [eventTimeFilter, setEventTimeFilter] = useState<EventTimeFilterType>('upcoming-events');
   const [validityFilter, setValidityFilter] = useState<'all' | 'valid' | 'invalid'>('valid');
 
   const [isRefreshing, setIsRefreshing] = useState<boolean | string>(false);
