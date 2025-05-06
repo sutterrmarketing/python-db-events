@@ -2,7 +2,7 @@ import importlib
 import urllib3
 import asyncio
 from src.utils import deduplicate_events, load_config
-from app.src.weblist import weblist
+from src.weblist import weblist
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
